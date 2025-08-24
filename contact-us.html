@@ -48,15 +48,6 @@
         <input type="email" class="form-control rounded-3" id="email" required>
       </div>
       <div class="mb-3">
-        <label class="form-label fw-bold">Type</label>
-        <select class="form-select rounded-3" id="type" required>
-          <option value="">-- Select --</option>
-          <option value="Suggestion">Suggestion</option>
-          <option value="Feedback">Feedback</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="mb-3">
         <label class="form-label fw-bold">Message</label>
         <textarea class="form-control rounded-3" id="message" rows="4" required></textarea>
       </div>
@@ -75,7 +66,6 @@
     emailjs.send("service_sznxqrk","template_afybvtr",{
       from_name: document.getElementById("name").value,
       user_email: document.getElementById("email").value,
-      type: document.getElementById("type").value,
       message: document.getElementById("message").value,
       to_email: "bhavsarudyog@gmail.com",
       submitted_at: new Date().toLocaleString()

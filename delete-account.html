@@ -90,13 +90,13 @@
     const email = document.getElementById("email").value;
     const reason = document.getElementById("reason").value;
 
-    // ✅ Send email
     emailjs.send("service_sznxqrk", "template_5wkxccy", {
       from_name: name,
-      from_email: email,
+      reply_to: email,                  // ✅ reply goes to user's email
+      user_email: email,                // ✅ pass user email explicitly
       message: reason,
-      to_email: "bhavsarudyog@gmail.com",   // Always send to Bhavsar Udyog
-      submitted_at: new Date().toLocaleString() // ✅ Add timestamp
+      to_email: "bhavsarudyog@gmail.com", // ✅ always send to Bhavsar Udyog
+      submitted_at: new Date().toLocaleString()
     }).then(function(){
         alert("✅ Your request has been sent to Bhavsar Udyog!");
         document.getElementById("deleteForm").reset();
@@ -105,6 +105,10 @@
         alert("❌ Failed to send. Please try again.");
     });
   });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>

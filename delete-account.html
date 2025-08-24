@@ -80,23 +80,35 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("wRu1n6OMo-Qzm8xTm"); // Your EmailJS public key
+    emailjs.init("wRu1n6OMo-Qzm8xTm"); // ✅ Your EmailJS Public Key
   })();
 
   document.getElementById("deleteForm").addEventListener("submit", function(e){
-  e.preventDefault();
+    e.preventDefault();
 
-  emailjs.send("service_sznxqrk", "template_e0leioa", {
-    from_name: document.getElementById("name").value,
-    from_email: document.getElementById("email").value,
-    message: document.getElementById("reason").value,
-    to_email: "bhavsarudyog@gmail.com"  // ✅ Force mail to Bhavsar Udyog
-  }).then(function(){
-      alert("✅ Your request has been sent!");
-  }, function(){
-      alert("❌ Failed to send. Please try again.");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const reason = document.getElementById("reason").value;
+
+    // ✅ Send email
+    emailjs.send("service_sznxqrk", "template_5wkxccy", {
+      from_name: name,
+      from_email: email,
+      message: reason,
+      to_email: "bhavsarudyog@gmail.com",   // Always send to Bhavsar Udyog
+      submitted_at: new Date().toLocaleString() // ✅ Add timestamp
+    }).then(function(){
+        alert("✅ Your request has been sent to Bhavsar Udyog!");
+        document.getElementById("deleteForm").reset();
+    }, function(error){
+        console.error("EmailJS Error:", error);
+        alert("❌ Failed to send. Please try again.");
+    });
   });
-});
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 
 
   document.getElementById('year').textContent = new Date().getFullYear();

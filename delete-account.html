@@ -84,18 +84,20 @@
   })();
 
   document.getElementById("deleteForm").addEventListener("submit", function(e){
-    e.preventDefault();
+  e.preventDefault();
 
-    emailjs.send("service_sznxqrk","template_5wkxccy",{
-      from_name: document.getElementById("name").value,
-      from_email: document.getElementById("email").value,
-      message: document.getElementById("reason").value
-    }).then(function(){
-        alert("✅ Your request has been sent!");
-    }, function(){
-        alert("❌ Failed to send. Please try again.");
-    });
+  emailjs.send("service_sznxqrk", "template_5wkxccy", {
+    from_name: document.getElementById("name").value,
+    from_email: document.getElementById("email").value,
+    message: document.getElementById("reason").value,
+    to_email: "bhavsarudyog@gmail.com"  // ✅ Force mail to Bhavsar Udyog
+  }).then(function(){
+      alert("✅ Your request has been sent!");
+  }, function(){
+      alert("❌ Failed to send. Please try again.");
   });
+});
+
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>

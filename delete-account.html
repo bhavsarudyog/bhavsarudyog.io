@@ -78,7 +78,7 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("wRu1n6OMo-Qzm8xTm"); // ✅ Your Public Key
+    emailjs.init("wRu1n6OMo-Qzm8xTm"); // Your EmailJS Public Key
   })();
 
   document.getElementById("deleteForm").addEventListener("submit", function(e){
@@ -86,10 +86,8 @@
 
     emailjs.send("service_sznxqrk", "template_e0leioa", {
       from_name: document.getElementById("name").value,
-      user_email: document.getElementById("email").value,
-      reason: document.getElementById("reason").value,   // ✅ renamed for clarity
-      to_email: "bhavsarudyog@gmail.com",
-      submitted_at: new Date().toLocaleString()
+      from_email: document.getElementById("email").value, // ✅ match template
+      message: document.getElementById("reason").value,   // ✅ match template
     }).then(function(){
         alert("✅ Your request has been sent to Bhavsar Udyog!");
         e.target.reset();
@@ -101,5 +99,6 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>

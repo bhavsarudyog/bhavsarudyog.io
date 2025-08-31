@@ -9,12 +9,12 @@
     :root{ --bg:#f7f7f8; --card:#ffffff; --ink:#111827; --muted:#4b5563; --brand:#505168; --accent:#505168; }
     body{ margin:0; font-family:system-ui, Arial, sans-serif; background:var(--bg); color:var(--ink); }
     header img{ max-height:50px; border-radius:12px; }
-    h2{ color:var(--brand); }
+    h2,h3{ color:var(--brand); }
     p{ color:var(--muted); line-height:1.65; }
     footer{ text-align:center; margin:40px 0 20px; color:var(--muted); font-size:14px; }
-    .feature-card{ background:var(--card); border:none; border-radius:20px; transition:all 0.3s ease; }
-    .feature-card:hover{ transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.1); }
-    .icon-circle{ width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--brand); color:#fff; font-size:24px; margin-bottom:15px; }
+    .card-custom{ border:0; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.2s ease; }
+    .card-custom:hover{ transform:translateY(-5px); }
+    .icon-circle{ width:60px; height:60px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--brand); color:#fff; font-size:24px; margin-bottom:15px; }
   </style>
 </head>
 <body>
@@ -40,68 +40,67 @@
 </header>
 
 <main class="container my-5">
+  <!-- About -->
   <div class="card shadow-lg border-0 p-4 rounded-4 mb-5">
     <h2>About Us</h2>
     <p><b>Bhavsar Udyog</b> is dedicated to empowering and supporting entrepreneurs, startups, and organizations within the Bhavsar community.</p>
     <p>Our mission is to create a trusted ecosystem where businesses connect with customers and partners with transparency and integrity.</p>
-    <p>We aim to showcase talent, foster collaboration, and provide a platform where innovation and tradition come together to build a prosperous future.</p>
   </div>
 
-  <!-- Features / Offerings Section -->
-  <section>
-    <h2 class="text-center mb-4">What We Offer</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card feature-card text-center p-4 h-100">
-          <div class="icon-circle"><i class="bi bi-people-fill"></i></div>
-          <h5 class="fw-bold">Community Networking</h5>
-          <p>Connect with entrepreneurs, professionals, and businesses from the Bhavsar community to grow together.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card feature-card text-center p-4 h-100">
-          <div class="icon-circle"><i class="bi bi-briefcase-fill"></i></div>
-          <h5 class="fw-bold">Business Promotion</h5>
-          <p>Showcase your products, services, and innovations to a wider audience with trust and credibility.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card feature-card text-center p-4 h-100">
-          <div class="icon-circle"><i class="bi bi-shield-check"></i></div>
-          <h5 class="fw-bold">Trusted Ecosystem</h5>
-          <p>We ensure transparency and integrity while building partnerships and collaborations within the community.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card feature-card text-center p-4 h-100">
-          <div class="icon-circle"><i class="bi bi-lightbulb-fill"></i></div>
-          <h5 class="fw-bold">Support for Startups</h5>
-          <p>Guidance, resources, and visibility to help new businesses thrive in competitive markets.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card feature-card text-center p-4 h-100">
-          <div class="icon-circle"><i class="bi bi-graph-up-arrow"></i></div>
-          <h5 class="fw-bold">Growth Opportunities</h5>
-          <p>Discover collaborations, partnerships, and new customers to scale your business effectively.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card feature-card text-center p-4 h-100">
-          <div class="icon-circle"><i class="bi bi-heart-fill"></i></div>
-          <h5 class="fw-bold">Community Upliftment</h5>
-          <p>Building a strong foundation for social and economic growth of the Bhavsar community.</p>
-        </div>
+  <!-- Cards Section -->
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-custom p-4 h-100 text-center">
+        <div class="icon-circle">🎯</div>
+        <h3 class="fw-bold">Our Mission</h3>
+        <p>To empower Bhavsar entrepreneurs by providing a digital platform that promotes growth, visibility, and opportunities in the business world.</p>
       </div>
     </div>
-  </section>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-custom p-4 h-100 text-center">
+        <div class="icon-circle">🌟</div>
+        <h3 class="fw-bold">Our Vision</h3>
+        <p>Building a self-reliant Bhavsar community where every organization thrives through collaboration, innovation, and shared knowledge.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-custom p-4 h-100 text-center">
+        <div class="icon-circle">🤝</div>
+        <h3 class="fw-bold">Community</h3>
+        <p>A strong network of Bhavsar businesses helping each other through partnerships, referrals, and mutual trust across industries.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-custom p-4 h-100 text-center">
+        <div class="icon-circle">💼</div>
+        <h3 class="fw-bold">Services</h3>
+        <p>From startups to established businesses, Bhavsar Udyog offers tools for networking, digital presence, and promotional support.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-custom p-4 h-100 text-center">
+        <div class="icon-circle">📈</div>
+        <h3 class="fw-bold">Growth</h3>
+        <p>Helping businesses scale with modern strategies, mentorship programs, and exposure to new opportunities within the community.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-custom p-4 h-100 text-center">
+        <div class="icon-circle">☎️</div>
+        <h3 class="fw-bold">Support</h3>
+        <p>We ensure that members receive continuous guidance, technical support, and a safe platform to showcase their work.</p>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>© <span id="year"></span> Bhavsar Udyog. All rights reserved.</footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

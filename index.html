@@ -3,28 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us – Bhavsar Udyog</title>
+  <title>About Bhavsar Udyog App</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    :root{ 
-      --bg:#f7f7f8; 
-      --card:#ffffff; 
-      --ink:#111827; 
-      --muted:#4b5563; 
-      --brand:#505168; 
-      --accent:#505168; 
-    }
-    body{ margin:0; font-family:system-ui, Arial, sans-serif; background:var(--bg); color:var(--ink); }
-    header img{ max-height:50px; border-radius:12px; }
-    h2{ color:var(--brand); font-weight:bold; }
-    h3{ color:var(--brand); margin-top:25px; font-weight:600; }
-    p{ color:var(--muted); line-height:1.7; }
+    :root{ --bg:#f7f7f8; --card:#ffffff; --ink:#111827; --muted:#4b5563; --brand:#505168; --accent:#6b7280; }
+    body{ font-family:system-ui, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+    h2, h3{ color:var(--brand); font-weight:700; }
+    p{ color:var(--muted); line-height:1.75; font-size:1.05rem; }
+    .icon-box{ background:var(--card); border-radius:16px; padding:20px; text-align:center; transition:.3s; box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+    .icon-box i{ font-size:2rem; color:var(--brand); margin-bottom:12px;}
+    .icon-box:hover{ transform:translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,0.1);}
     footer{ text-align:center; margin:40px 0 20px; color:var(--muted); font-size:14px; }
-    .logo-large { max-width:130px; border-radius:20px; margin-bottom:20px; }
-    ul { color:var(--muted); line-height:1.6; }
-    .timeline { border-left:3px solid var(--brand); margin:20px 0; padding-left:20px; }
-    .timeline-item { margin-bottom:20px; }
-    .timeline-item h5 { color:var(--brand); margin-bottom:5px; }
   </style>
 </head>
 <body>
@@ -32,7 +22,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark" style="background:linear-gradient(135deg,var(--brand),var(--accent)); border-radius:0 0 20px 20px;">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="BhavsarUdyog.jpg" alt="Logo"><span class="fw-bold">Bhavsar Udyog</span>
+        <img src="BhavsarUdyog.jpg" alt="Logo" style="max-height:50px; border-radius:12px;">
+        <span class="fw-bold">Bhavsar Udyog</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
         <span class="navbar-toggler-icon"></span>
@@ -50,60 +41,107 @@
 </header>
 
 <main class="container my-5">
-  <div class="card shadow-lg border-0 p-4 rounded-4">
-    <div class="text-center">
-      <img src="BhavsarUdyog.jpg" alt="Bhavsar Udyog Logo" class="logo-large shadow-sm">
-      <h2>About Us</h2>
+
+  <!-- About Section -->
+  <div class="card shadow-lg border-0 p-4 rounded-4 mb-5">
+    <div class="text-center mb-4">
+      <img src="BhavsarUdyog.jpg" alt="Bhavsar Udyog Logo" style="max-width:120px; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <h2 class="mt-3">About Bhavsar Udyog Application</h2>
     </div>
-
-    <p><b>Bhavsar Udyog</b> is more than just a business platform – it is a movement to uplift and empower entrepreneurs, startups, and enterprises within the Bhavsar community. We provide an ecosystem that promotes <b>growth, collaboration, and innovation</b>, helping individuals and businesses showcase their work, build credibility, and connect with wider audiences.</p>
-    
-    <h3>Our Mission</h3>
-    <p>To build a sustainable and trusted ecosystem for entrepreneurs and organizations, while strengthening the Bhavsar community’s presence in the business world.</p>
-
-    <h3>Our Vision</h3>
-    <p>We envision a global network where Bhavsar-owned businesses are recognized for their quality, ethics, and innovation, contributing positively to the economy and society.</p>
-    
-    <h3>Our Journey</h3>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h5>2022 – Idea & Foundation</h5>
-        <p>The concept of Bhavsar Udyog was born – with the aim of connecting community entrepreneurs and providing them visibility.</p>
-      </div>
-      <div class="timeline-item">
-        <h5>2023 – Building the Platform</h5>
-        <p>We launched our digital presence and began registering businesses, startups, and professionals under one roof.</p>
-      </div>
-      <div class="timeline-item">
-        <h5>2024 – Expanding Our Reach</h5>
-        <p>With growing community support, we expanded services like mentorship, networking events, and online directories.</p>
-      </div>
-      <div class="timeline-item">
-        <h5>2025 – Scaling for the Future</h5>
-        <p>Our focus is now on integrating digital tools, mobile apps, and global connections for Bhavsar-owned businesses.</p>
-      </div>
-    </div>
-
-    <h3>What We Offer</h3>
-    <ul>
-      <li>✅ Business Listings & Digital Identity for entrepreneurs.</li>
-      <li>✅ Networking opportunities within the Bhavsar community and beyond.</li>
-      <li>✅ Mentorship and knowledge-sharing sessions.</li>
-      <li>✅ Support for collaborations, partnerships, and customer reach.</li>
-      <li>✅ Tools to promote transparency, trust, and professional growth.</li>
-    </ul>
-
-    <h3>Community Impact</h3>
-    <p>Bhavsar Udyog has already helped <b>hundreds of entrepreneurs</b> connect with customers and build credibility. By showcasing skills, products, and services, we empower local businesses to grow sustainably while maintaining community pride.</p>
-
-    <h3>Future Goals</h3>
-    <ul>
-      <li>🌍 Build a global Bhavsar business directory and mobile app.</li>
-      <li>📈 Organize community-led expos, fairs, and digital summits.</li>
-      <li>🤝 Strengthen ties between entrepreneurs, customers, and investors.</li>
-      <li>💡 Encourage young entrepreneurs through startup incubation support.</li>
-    </ul>
+    <p><b>Bhavsar Udyog</b> is a mobile and web application built to empower the Bhavsar community by connecting entrepreneurs, startups, and organizations on one trusted platform. It serves as a <b>business directory, networking hub, and growth ecosystem</b>, helping members showcase their work, reach customers, and build meaningful collaborations.</p>
   </div>
+
+  <!-- Features Section -->
+  <section class="mb-5">
+    <h3 class="text-center mb-4">Key Features</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="bi bi-person-circle"></i>
+          <h5>User Profiles</h5>
+          <p>Create a verified business profile with owner details, contact info, and brochures.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="bi bi-building"></i>
+          <h5>Business Directory</h5>
+          <p>Discover businesses across categories, states, and cities in one platform.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="bi bi-search"></i>
+          <h5>Smart Search</h5>
+          <p>Find businesses quickly using filters for location, type of business, or service.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="bi bi-geo-alt"></i>
+          <h5>Google Maps</h5>
+          <p>Locate shops and offices easily with integrated Google Map links.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="bi bi-bell"></i>
+          <h5>Notifications</h5>
+          <p>Stay updated with community news, approvals, and opportunities.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="bi bi-shield-lock"></i>
+          <h5>Privacy & Security</h5>
+          <p>Your data is protected, and users can request account deletion anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="card shadow-sm border-0 p-4 rounded-4 mb-5">
+    <h3 class="mb-3 text-center">Our Mission & Vision</h3>
+    <p><b>Mission:</b> To build a transparent and supportive ecosystem where Bhavsar entrepreneurs and organizations grow together with trust and collaboration.</p>
+    <p><b>Vision:</b> To be the leading platform that connects tradition with modern entrepreneurship, helping Bhavsar businesses expand globally while staying rooted in community values.</p>
+  </section>
+
+  <!-- Future Plans -->
+  <section>
+    <h3 class="text-center mb-4">Future Enhancements</h3>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="bi bi-cart"></i>
+          <h6>E-Commerce</h6>
+          <p>Enable product listings and secure online payments.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="bi bi-lightbulb"></i>
+          <h6>AI Recommendations</h6>
+          <p>Smart suggestions for users to discover relevant businesses.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="bi bi-people"></i>
+          <h6>Networking Events</h6>
+          <p>Organize virtual & physical meetups for business owners.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="bi bi-translate"></i>
+          <h6>Multilingual Support</h6>
+          <p>Expand reach with support for multiple Indian languages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>© <span id="year"></span> Bhavsar Udyog. All rights reserved.</footer>

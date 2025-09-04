@@ -3,31 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delete Account – Bhavsar Udyog</title>
-
-  <!-- Bootstrap CSS -->
+  <title>We Value Your Feedback – Bhavsar Udyog</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
-    :root{
-      --bg:#f7f7f8; --card:#ffffff; --ink:#111827; --muted:#4b5563;
-      --brand:#505168; --accent:#505168;
-    }
-    body { font-family:system-ui, Arial, sans-serif; background:var(--bg); color:var(--ink); }
-    header img { max-height:50px; border-radius:12px; }
-    h2 { color:var(--brand); margin-bottom:20px; }
-    footer { text-align:center; margin:40px 0 20px; color:var(--muted); font-size:14px; }
+    :root{ --bg:#f7f7f8; --card:#ffffff; --ink:#111827; --muted:#4b5563; --brand:#505168; --accent:#505168; }
+    body{ font-family:system-ui, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+    header img{ max-height:50px; border-radius:12px; }
+    h2{ color:var(--brand); margin-bottom:20px; }
+    footer{ text-align:center; margin:40px 0 20px; color:var(--muted); font-size:14px; }
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background:linear-gradient(135deg,var(--brand),var(--accent)); border-radius:0 0 20px 20px;">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="BhavsarUdyog.jpg">
-        <span class="fw-bold">Bhavsar Udyog</span>
+        <img src="BhavsarUdyog.jpg" alt="Logo"><span class="fw-bold">Bhavsar Udyog</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
         <span class="navbar-toggler-icon"></span>
@@ -39,72 +30,65 @@
           <li class="nav-item"><a class="nav-link text-white fw-bold" href="delete-account.html">Delete Account</a></li>
           <li class="nav-item"><a class="nav-link text-white fw-bold" href="contact-us.html">Contact Us</a></li>
           <li class="nav-item"><a class="nav-link text-white fw-bold" href="feedback.html">Feedback</a></li>
+
         </ul>
       </div>
     </div>
   </nav>
 </header>
 
-<!-- Main Form -->
 <main class="container my-5">
   <div class="card shadow-lg border-0 p-4 rounded-4">
-    <h2>Request Account Deletion</h2>
-    <form id="deleteForm">
+    <h2>We Value Your Feedback</h2>
+    <form id="feedbackForm">
       <div class="mb-3">
-        <label for="name" class="form-label fw-bold">Full Name</label>
+        <label class="form-label fw-bold">Full Name</label>
         <input type="text" class="form-control rounded-3" id="name" required>
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label fw-bold">Email</label>
+        <label class="form-label fw-bold">Email</label>
         <input type="email" class="form-control rounded-3" id="email" required>
       </div>
       <div class="mb-3">
-        <label for="reason" class="form-label fw-bold">Reason for Deletion</label>
-        <textarea class="form-control rounded-3" id="reason" rows="4" required></textarea>
+        <label class="form-label fw-bold">Message</label>
+        <textarea class="form-control rounded-3" id="message" rows="4" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary px-4 py-2 fw-bold">Submit Request</button>
+      <button type="submit" class="btn btn-primary px-4 py-2 fw-bold">Send Message</button>
     </form>
   </div>
 </main>
 
-<!-- Footer -->
-<footer>
-  © <span id="year"></span> Bhavsar Udyog. All rights reserved.
-</footer>
+<footer>© <span id="year"></span> Bhavsar Udyog. All rights reserved.</footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- SweetAlert2 (for alerts) -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 <script>
-  (function(){
-    emailjs.init("wRu1n6OMo-Qzm8xTm"); // Your EmailJS Public Key
-  })();
+  (function(){ emailjs.init("wRu1n6OMo-Qzm8xTm"); })();
 
-  document.getElementById("deleteForm").addEventListener("submit", function(e){
+  document.getElementById("feedbackForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    emailjs.send("service_sznxqrk", "template_e0leioa", {
+    emailjs.send("service_sznxqrk","template_afybvtr",{
       from_name: document.getElementById("name").value,
-      from_email: document.getElementById("email").value,
-      message: document.getElementById("reason").value,
-    }).then(function(){
+      user_email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+      to_email: "bhavsarudyog@gmail.com",
+      submitted_at: new Date().toLocaleString()
+    }).then(()=>{
         // ✅ Success Alert
         Swal.fire({
           icon: "success",
-          title: "Request Sent!",
-          text: "Your account deletion request has been sent to Bhavsar Udyog.",
+          title: "Message Sent!",
+          text: "Your message has been delivered successfully.",
           showConfirmButton: false,
           timer: 3000,
           timerProgressBar: true
         });
         e.target.reset();
-    }, function(error){
-        console.error("EmailJS Error:", error);
+    }, err=>{
+        console.error(err);
         // ❌ Failure Alert
         Swal.fire({
           icon: "error",
@@ -116,6 +100,5 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
